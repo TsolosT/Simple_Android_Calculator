@@ -10,10 +10,7 @@
         android:id="@+id/relativeLayout"
         android:layout_width="383dp"
         android:layout_height="511dp"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
@@ -71,13 +68,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/infoTextView"
+            android:id="@+id/value1_TextView"
             android:layout_width="212dp"
             android:layout_height="0dp"
-            android:layout_marginEnd="140dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="160dp"
+            android:layout_marginBottom="16dp"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintBottom_toTopOf="@+id/value2_TextView"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
@@ -248,7 +245,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/answer_TextView"
             android:layout_width="215dp"
             android:layout_height="70dp"
             android:layout_marginStart="8dp"
@@ -264,21 +261,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/value2_TextView"
             android:layout_width="211dp"
             android:layout_height="34dp"
-            android:layout_marginEnd="36dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="20dp"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/editText"
-            app:layout_constraintEnd_toStartOf="@+id/textView2" />
+            app:layout_constraintBottom_toTopOf="@+id/answer_TextView"
+            app:layout_constraintEnd_toStartOf="@+id/sign_TextView" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/sign_TextView"
             android:layout_width="78dp"
             android:layout_height="30dp"
             android:layout_marginTop="68dp"
-            android:layout_marginEnd="28dp"
+            android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>

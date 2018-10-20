@@ -13,48 +13,52 @@ public class MainActivity extends AppCompatActivity {
     private double val1;
     private double val2;
     private double ans;
+    private TextView value1_display;
+    private TextView value2_display;
+    private TextView sign_display;
+    private EditText answer_display;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        init();
+    }
+    public void init() {
+
+        value1_display=(TextView)findViewById(R.id.value1_TextView);
+         value2_display=(TextView)findViewById(R.id.value2_TextView);
+        sign_display=(TextView)findViewById(R.id.sign_TextView);
+        answer_display=(EditText)findViewById(R.id.answer_TextView);
+
     }
 
     public void btnNumClick(View v)
     {
-        TextView textView=(TextView)findViewById(R.id.infoTextView);
-        TextView textView1=(TextView)findViewById(R.id.textView);
-        TextView pros=(TextView)findViewById(R.id.textView2);
         Button button=(Button) v;
-        if(pros.getText()=="")
+        if(sign_display.getText()=="")
         {
-            textView.append(button.getText());
+            value1_display.append(button.getText());
         }
         else
         {
-            textView1.append(button.getText());
+            value2_display.append(button.getText());
         }
 
     }
     public void btnClearClick(View v)
     {
-        TextView textView=(TextView)findViewById(R.id.infoTextView);
-        TextView textView1=(TextView)findViewById(R.id.textView);
-        TextView prosimo=(TextView)findViewById(R.id.textView2);
+        value1_display.setText("");
+        value2_display.setText("");
+        sign_display.setText("");
 
-        textView1.setText("");
-        textView.setText("");
-        prosimo.setText("");
     }
     public void btnAnsClick(View v)
     {
-        TextView value1=(TextView)findViewById(R.id.infoTextView);
-        TextView value2=(TextView)findViewById(R.id.textView);
-        EditText text=(EditText)findViewById(R.id.editText);
 
-        val1=Double.parseDouble(value1.getText().toString());
-        val2=Double.parseDouble(value2.getText().toString());
+        val1=Double.parseDouble(value1_display.getText().toString());
+        val2=Double.parseDouble(value2_display.getText().toString());
 
         if(set=="plus")
         {
@@ -72,26 +76,26 @@ public class MainActivity extends AppCompatActivity {
         {
             ans=val1*val2;
         }
-        text.setText(String.valueOf(ans));
+        answer_display.setText(String.valueOf(ans));
     }
     public void btnAddClic(View v)
-    {   TextView prosimo=(TextView)findViewById(R.id.textView2);
+    {
         set="plus";
-        prosimo.setText("+");
+       sign_display.setText("+");
     }
     public void btnMinusClic(View v)
-    {   TextView prosimo=(TextView)findViewById(R.id.textView2);
+    {
         set="minus";
-        prosimo.setText("-");
+        sign_display.setText("-");
     }
     public void btnDivClic(View v)
-    {   TextView prosimo=(TextView)findViewById(R.id.textView2);
+    {
         set="div";
-        prosimo.setText("/");
+        sign_display.setText("/");
     }
     public void btnMultClic(View v)
-    {   TextView prosimo=(TextView)findViewById(R.id.textView2);
+    {
         set="mult";
-        prosimo.setText("*");
+        sign_display.setText("*");
     }
 }
